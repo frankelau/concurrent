@@ -1,4 +1,4 @@
-package cn.com.liu.conn02;
+package cn.com.liu.threadpool3;
 
 import java.net.HttpURLConnection;
 import java.util.concurrent.RejectedExecutionHandler;

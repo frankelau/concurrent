@@ -1,4 +1,4 @@
-package cn.com.liu.conn02;
+package cn.com.liu.threadpool3;
 
 public class MyTask implements Runnable {
 

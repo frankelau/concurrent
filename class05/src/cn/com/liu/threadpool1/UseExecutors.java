@@ -1,4 +1,4 @@
-package cn.com.liu.conn01;
+package cn.com.liu.threadpool1;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
