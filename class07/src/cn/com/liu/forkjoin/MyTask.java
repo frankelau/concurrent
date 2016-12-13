@@ -1,0 +1,29 @@
+package cn.com.liu.forkjoin;
+
+
+import java.util.concurrent.RecursiveTask;
+ 
+@SuppressWarnings("serial")
+public class MyTask extends RecursiveTask<Integer> {
+    int i;
+    int j;
+ 
+    public MyTask(int i,int j) {
+        this.i = i;
+        this.j = j;
+    }
+ 
+    @Override
+    protected Integer compute() {
+        if (i >= j) {
+            return i * i;
+        }
+ 
+        MyTask newTask2 = new MyTask(i + 1,j);
+        newTask2.fork();
+ 
+        return i*i + newTask2.join();
+ 
+    }
+ 
+}

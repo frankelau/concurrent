@@ -3,7 +3,7 @@ package cn.com.liu.multi;
 import java.nio.ByteBuffer;
 import java.util.UUID;
 
-import cn.com.liu.base.LongEvent;
+import cn.com.liu.disruptor.LongEvent;
 
 import com.lmax.disruptor.EventTranslatorOneArg;
 import com.lmax.disruptor.RingBuffer;

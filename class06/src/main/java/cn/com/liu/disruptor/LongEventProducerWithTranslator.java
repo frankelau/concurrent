@@ -1,9 +1,10 @@
-package cn.com.liu.base;
+package cn.com.liu.disruptor;
 
 import java.nio.ByteBuffer;
 
 import com.lmax.disruptor.EventTranslatorOneArg;
 import com.lmax.disruptor.RingBuffer;
+
 
 /**
  * Disruptor 3.0提供了lambda式的API。这样可以把一些复杂的操作放在Ring Buffer，
@@ -24,6 +25,7 @@ public class LongEventProducerWithTranslator {
 				@Override
 				public void translateTo(LongEvent event, long sequeue, ByteBuffer buffer) {
 					event.setValue(buffer.getLong(0));
+					event.setName("事件"+buffer.getLong(0));
 				}
 			};
 	
