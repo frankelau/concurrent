@@ -1,8 +1,8 @@
-package cn.com.liu.generate2;
-
-import cn.com.liu.generate1.Trade;
+package cn.com.liu.disruptor2;
 
 import com.lmax.disruptor.EventHandler;
+
+import cn.com.liu.eventprocessor.Trade;
 
 public class Handler3 implements EventHandler<Trade> {
     @Override  

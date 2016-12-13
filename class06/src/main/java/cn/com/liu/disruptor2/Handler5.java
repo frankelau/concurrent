@@ -1,13 +1,13 @@
-package cn.com.liu.generate2;
+package cn.com.liu.disruptor2;
 
 import java.util.UUID;
-
-import cn.com.liu.generate1.Trade;
 
 import com.lmax.disruptor.EventHandler;
 import com.lmax.disruptor.WorkHandler;
 
-public class Handler1 implements EventHandler<Trade>,WorkHandler<Trade> {  
+import cn.com.liu.eventprocessor.Trade;
+
+public class Handler5 implements EventHandler<Trade>,WorkHandler<Trade> {  
 	  
     @Override  
     public void onEvent(Trade event, long sequence, boolean endOfBatch) throws Exception {  
@@ -16,8 +16,7 @@ public class Handler1 implements EventHandler<Trade>,WorkHandler<Trade> {
   
     @Override  
     public void onEvent(Trade event) throws Exception {  
-    	System.out.println("handler1: set name");
-    	event.setName("h1");
-    	Thread.sleep(1000);
+    	System.out.println("handler5: get price : " + event.getPrice());
+    	event.setPrice(event.getPrice() + 3.0);
     }  
 }  

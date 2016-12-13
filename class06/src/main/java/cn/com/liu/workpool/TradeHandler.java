@@ -1,13 +1,11 @@
-package cn.com.liu.generate2;
+package cn.com.liu.workpool;
 
 import java.util.UUID;
-
-import cn.com.liu.generate1.Trade;
 
 import com.lmax.disruptor.EventHandler;
 import com.lmax.disruptor.WorkHandler;
 
-public class Handler4 implements EventHandler<Trade>,WorkHandler<Trade> {  
+public class TradeHandler implements EventHandler<Trade>, WorkHandler<Trade> {  
 	  
     @Override  
     public void onEvent(Trade event, long sequence, boolean endOfBatch) throws Exception {  
@@ -16,7 +14,8 @@ public class Handler4 implements EventHandler<Trade>,WorkHandler<Trade> {
   
     @Override  
     public void onEvent(Trade event) throws Exception {  
-    	System.out.println("handler4: get name : " + event.getName());
-    	event.setName(event.getName() + "h4");
+        //这里做具体的消费逻辑  
+        event.setId(UUID.randomUUID().toString());//简单生成下ID  
+        System.out.println(event.getId());  
     }  
 }  

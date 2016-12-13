@@ -1,4 +1,4 @@
-package cn.com.liu.generate1;
+package cn.com.liu.eventprocessor;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;

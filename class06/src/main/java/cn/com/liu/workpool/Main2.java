@@ -1,4 +1,4 @@
-package cn.com.liu.generate1;
+package cn.com.liu.workpool;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

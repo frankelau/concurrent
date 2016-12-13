@@ -1,17 +1,17 @@
-package cn.com.liu.generate2;
+package cn.com.liu.disruptor2;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-
-import cn.com.liu.generate1.Trade;
-import cn.com.liu.generate1.TradeHandler;
 
 import com.lmax.disruptor.BusySpinWaitStrategy;
 import com.lmax.disruptor.EventFactory;
 import com.lmax.disruptor.dsl.Disruptor;
 import com.lmax.disruptor.dsl.EventHandlerGroup;
 import com.lmax.disruptor.dsl.ProducerType;
+
+import cn.com.liu.eventprocessor.Trade;
+import cn.com.liu.eventprocessor.TradeHandler;
 
 public class Main {  
     public static void main(String[] args) throws InterruptedException {  

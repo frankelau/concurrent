@@ -1,12 +1,12 @@
-package cn.com.liu.generate2;
+package cn.com.liu.disruptor2;
 
 import java.util.Random;
 import java.util.concurrent.CountDownLatch;
 
-import cn.com.liu.generate1.Trade;
-
 import com.lmax.disruptor.EventTranslator;
 import com.lmax.disruptor.dsl.Disruptor;
+
+import cn.com.liu.eventprocessor.Trade;
 
 public class TradePublisher implements Runnable {  
 	

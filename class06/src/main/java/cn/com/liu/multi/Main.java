@@ -18,6 +18,9 @@ public class Main {
 	
 	public static void main(String[] args) throws Exception {
 
+		
+		
+		
 		//创建ringBuffer
 		RingBuffer<Order> ringBuffer = 
 				RingBuffer.create(ProducerType.MULTI, 
