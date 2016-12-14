@@ -1,0 +1,4 @@
+RingBuffer 被看作Disruptor最主要的组件
+Sequence
+Sequencer
+SequenceBarrier

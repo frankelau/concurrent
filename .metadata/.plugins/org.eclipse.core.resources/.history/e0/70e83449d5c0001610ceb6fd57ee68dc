@@ -1,0 +1,7 @@
+package cn.com.liu.disruptor;
+
+import com.lmax.disruptor.EventFactory;
+
+public class LongEventFactory implements EventFactory<LongEvent>{
+
+}

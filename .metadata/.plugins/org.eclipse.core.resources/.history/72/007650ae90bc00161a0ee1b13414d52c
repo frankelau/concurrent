@@ -1,0 +1,84 @@
+package cn.com.liu.conn01;
+
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.RejectedExecutionHandler;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.TimeUnit;
+
+
+public class UseExecutors {
+
+	public static void main(String[] args) {
+		 /*public ThreadPoolExecutor(
+		    	 int corePoolSize,核心线程数
+                 int maximumPoolSize,最大线程数
+                 long keepAliveTime,保持活着的时间
+                 TimeUnit unit,时间单位
+                 BlockingQueue<Runnable> workQueue,阻塞队列
+                 ThreadFactory threadFactory,
+                 RejectedExecutionHandler handler
+                 ) {
+			        if (corePoolSize < 0 ||
+			            maximumPoolSize <= 0 ||
+			            maximumPoolSize < corePoolSize ||
+			            keepAliveTime < 0)
+			            throw new IllegalArgumentException();
+			        if (workQueue == null || threadFactory == null || handler == null)
+			            throw new NullPointerException();
+			        this.corePoolSize = corePoolSize;
+			        this.maximumPoolSize = maximumPoolSize;
+			        this.workQueue = workQueue;
+			        this.keepAliveTime = unit.toNanos(keepAliveTime);
+			        this.threadFactory = threadFactory;
+			        this.handler = handler;
+    }*/
+		
+		
+		
+		ExecutorService pool = Executors.newSingleThreadExecutor();
+//		Executors.newFixedThreadPool(10);
+//		Executors.newCachedThreadPool();
+//		Executors.newScheduledThreadPool(10);
+		//cache fixed single
+		System.out.println(pool);
+		
+		pool.submit(new Runnable() {
+			@Override
+			public void run() {
+				try {
+					System.out.println("线程1");
+					TimeUnit.SECONDS.sleep(10);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+		});
+		pool.submit(new Runnable() {
+			@Override
+			public void run() {
+				try {
+					System.out.println("线程2");
+					TimeUnit.SECONDS.sleep(10);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+		});
+		int count = 0;
+		while(true){
+			System.out.println(count);
+			try {
+				TimeUnit.SECONDS.sleep(1);
+				count++;
+				if(count==20){
+					break;
+				}
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		pool.shutdown();
+	}
+}

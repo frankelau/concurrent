@@ -1,0 +1,6 @@
+1.Ring Buffer如其名，环形的缓冲区。曾经 RingBuffer 是 Disruptor 中的最主要的对象，但从3.0版本开始，
+其职责被简化为仅仅负责对通过 Disruptor 进行交换的数据（事件）进行存储和更新。在一些更高级的应用场景中，
+Ring Buffer 可以由用户的自定义实现来完全替代。
+2.Sequence
+Sequencer
+SequenceBarrier

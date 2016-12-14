@@ -1,0 +1,13 @@
+package cn.com.liu.disruptor;
+
+import com.lmax.disruptor.EventFactory;
+
+public class LongEventFactory implements EventFactory<LongEvent>{
+
+	@Override
+	public LongEvent newInstance() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

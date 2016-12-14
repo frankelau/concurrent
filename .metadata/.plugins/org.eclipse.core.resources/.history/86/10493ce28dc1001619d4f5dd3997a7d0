@@ -1,0 +1,10 @@
+package cn.com.liu.multi;
+
+import com.lmax.disruptor.EventFactory;
+import com.lmax.disruptor.RingBuffer;
+import com.lmax.disruptor.dsl.ProducerType;
+
+public class MultiMain {
+	RingBuffer<Order> ringBuffer = RingBuffer.create(ProducerType.MULTI, new EventFactory<Order>() {
+	}, bufferSize, waitStrategy) ;
+}
